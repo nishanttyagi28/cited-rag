@@ -1,0 +1,49 @@
+{
+ "config": "bge-small-en-v1.5-c500-o50-p1500",
+ "chunks": 323,
+ "repeats": 3,
+ "device": "cpu",
+ "embed_cold_s": 13.059,
+ "embed_warm_s": 0.003,
+ "embed_reduction_pct": 100.0,
+ "ingest_cold_s": 13.691,
+ "ingest_warm_s": 0.602,
+ "ingest_reduction_pct": 95.6,
+ "raw": {
+  "cold": [
+   {
+    "parse_chunk_s": 0.6484102199974586,
+    "embed_s": 17.217020862000936,
+    "total_s": 17.893684367998503
+   },
+   {
+    "parse_chunk_s": 0.6125507460019435,
+    "embed_s": 13.058743141999003,
+    "total_s": 13.690870687001734
+   },
+   {
+    "parse_chunk_s": 0.5632550419977633,
+    "embed_s": 9.758185478000087,
+    "total_s": 10.34001435800019
+   }
+  ],
+  "warm": [
+   {
+    "parse_chunk_s": 0.7505161389999557,
+    "embed_s": 0.0029758189994026907,
+    "total_s": 0.7743656759994337
+   },
+   {
+    "parse_chunk_s": 0.5802451359995757,
+    "embed_s": 0.0025852729959296994,
+    "total_s": 0.6022625179975876
+   },
+   {
+    "parse_chunk_s": 0.5433017050017952,
+    "embed_s": 0.0024285170002258383,
+    "total_s": 0.5639694330020575
+   }
+  ]
+ },
+ "measured_at": "2026-10-19"
+}
