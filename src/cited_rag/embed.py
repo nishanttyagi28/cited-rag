@@ -89,12 +89,14 @@ class HashingEmbedder:
 
 
 class CachedEmbedder:
-    """Wraps an embedder with the on-disk cache. Queries are cached too."""
+    """Wraps an embedder with the on-disk cache. Query vectors are not cached by default
+    so query latency numbers stay honest."""
 
-    def __init__(self, inner: Embedder, cache: EmbeddingCache) -> None:
+    def __init__(self, inner: Embedder, cache: EmbeddingCache, cache_queries: bool = False) -> None:
         self.inner = inner
         self.cache = cache
         self.name = inner.name
+        self.cache_queries = cache_queries
 
     @property
     def dim(self) -> int:
@@ -117,6 +119,8 @@ class CachedEmbedder:
         return np.stack(self._cached("doc", texts, self.inner.embed_docs))
 
     def embed_queries(self, texts: list[str]) -> np.ndarray:
+        if not self.cache_queries:
+            return self.inner.embed_queries(texts)
         return np.stack(self._cached("query", texts, self.inner.embed_queries))
 
     def token_embeddings(self, texts: list[str]) -> list[np.ndarray]:

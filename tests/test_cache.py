@@ -37,3 +37,15 @@ def test_cached_embedder_only_computes_misses(tmp_path):
     assert toks[0].shape == (3, 64)
     emb.token_embeddings(["one two three"])
     assert inner.calls == 4
+
+
+def test_query_vectors_not_cached_unless_asked(tmp_path):
+    inner = HashingEmbedder(32)
+    emb = CachedEmbedder(inner, EmbeddingCache(tmp_path / "c.sqlite"))
+    emb.embed_queries(["q"])
+    emb.embed_queries(["q"])
+    assert inner.calls == 2
+    cached = CachedEmbedder(inner, EmbeddingCache(tmp_path / "d.sqlite"), cache_queries=True)
+    cached.embed_queries(["q"])
+    cached.embed_queries(["q"])
+    assert inner.calls == 3
