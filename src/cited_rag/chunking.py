@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import bisect
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Protocol
 
 from .types import Chunk, Page
@@ -54,9 +54,19 @@ class Parent:
     page_start: int
     page_end: int
     section: str
+    page_breaks: list[tuple[int, int]] = field(default_factory=list)  # (char offset, page)
 
     def to_dict(self) -> dict:
         return self.__dict__.copy()
+
+    def page_at(self, offset: int) -> int:
+        page = self.page_start
+        for off, pg in self.page_breaks:
+            if off <= offset:
+                page = pg
+            else:
+                break
+        return page
 
 
 def windows(n: int, size: int, overlap: int) -> list[tuple[int, int]]:
@@ -117,8 +127,22 @@ def chunk_pages(
             pid = f"{doc_id}:p{len(parents):04d}"
             p_lo, p_hi = spans[ps][0], spans[pe - 1][1]
             if parent_size > 0:
+                breaks = [(max(0, st - p_lo), pg) for st, pg in zip(starts, page_nums, strict=True)]
+                breaks = [(o, pg) for o, pg in breaks if o < p_hi - p_lo]
                 parents.append(
-                    Parent(pid, doc_id, text[p_lo:p_hi], page_at(p_lo), page_at(p_hi - 1), section)
+                    Parent(
+                        pid,
+                        doc_id,
+                        text[p_lo:p_hi],
+                        page_at(p_lo),
+                        page_at(p_hi - 1),
+                        section,
+                        [
+                            b
+                            for i, b in enumerate(breaks)
+                            if i == len(breaks) - 1 or b[0] != breaks[i + 1][0]
+                        ],
+                    )
                 )
             for cs, ce in windows(pe - ps, chunk_size, chunk_overlap):
                 lo, hi = spans[ps + cs][0], spans[ps + ce - 1][1]

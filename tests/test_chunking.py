@@ -66,3 +66,12 @@ def test_clean_text_joins_hyphenation():
 def test_section_for_pages_uses_deepest_preceding_heading():
     toc = [[1, "Intro", 1], [1, "1.", 2], [2, "Methods", 2], [1, "End", 4]]
     assert section_for_pages(toc, 5) == ["Intro", "Methods", "Methods", "End", "End"]
+
+
+def test_parent_page_breaks_map_offsets_to_pages():
+    pages = [Page("d", 7, words(10, "a"), "S"), Page("d", 8, words(10, "b"), "S")]
+    _, parents = chunk_pages(pages, WhitespaceTokenizer(), 5, 0, parent_size=100)
+    (p,) = parents
+    assert (p.page_start, p.page_end) == (7, 8)
+    assert p.page_at(0) == 7
+    assert p.page_at(p.text.index("b0")) == 8

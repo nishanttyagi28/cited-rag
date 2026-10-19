@@ -57,7 +57,9 @@ class Index:
         chunks = [Chunk.from_dict(json.loads(line)) for line in lines]
         parents = {}
         for line in (path / "parents.jsonl").read_text().splitlines():
-            p = Parent(**json.loads(line))
+            d = json.loads(line)
+            d["page_breaks"] = [tuple(b) for b in d.get("page_breaks", [])]
+            p = Parent(**d)
             parents[p.parent_id] = p
         dense = np.load(path / "dense.npy")
         return cls(chunks, parents, dense, meta["glossary"], meta["docs"], meta["key"])
