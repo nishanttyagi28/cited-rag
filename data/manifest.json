@@ -1,0 +1,7 @@
+[
+  {"doc_id": "nist-ai-rmf-1.0", "file": "nist-ai-rmf-1.0.pdf", "title": "NIST AI 100-1: Artificial Intelligence Risk Management Framework (AI RMF 1.0)", "year": 2023, "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf", "topic": "ai"},
+  {"doc_id": "nist-ai-600-1-genai-profile", "file": "nist-ai-600-1-genai-profile.pdf", "title": "NIST AI 600-1: AI RMF Generative AI Profile", "year": 2024, "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf", "topic": "ai"},
+  {"doc_id": "nist-csf-2.0", "file": "nist-csf-2.0.pdf", "title": "NIST CSWP 29: The NIST Cybersecurity Framework (CSF) 2.0", "year": 2024, "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf", "topic": "security"},
+  {"doc_id": "nist-sp-800-218-ssdf", "file": "nist-sp-800-218-ssdf.pdf", "title": "NIST SP 800-218: Secure Software Development Framework (SSDF) 1.1", "year": 2022, "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf", "topic": "security"},
+  {"doc_id": "nist-privacy-framework-1.0", "file": "nist-privacy-framework-1.0.pdf", "title": "NIST Privacy Framework 1.0", "year": 2020, "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.01162020.pdf", "topic": "privacy"}
+]
