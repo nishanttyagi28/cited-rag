@@ -30,7 +30,9 @@ class Config:
     llm_expansion: bool = False  # extra LLM paraphrases; costs one call per query
     parent_context: bool = True
     # refusal / fallback
-    min_confidence: float = 0.0  # in the units of the final scorer, see DESIGN.md
+    # refusal threshold in the units of the final scorer (cosine, CE probability, MaxSim).
+    # Preset values come from `eval/calibrate.py` on half of the golden set, see README.
+    min_confidence: float = 0.0
     web_fallback: bool = False
     web_provider: str = "fake"
     # generation
@@ -63,11 +65,11 @@ PRESETS: dict[str, Config] = {
         query_expansion=False,
         query_rewrite=False,
         parent_context=False,
-        min_confidence=0.70,
+        min_confidence=0.585,
     ),
-    "hybrid": Config(rerank="none", min_confidence=0.0),
-    "full": Config(min_confidence=0.0),
-    "full-maxsim": Config(rerank="maxsim", min_confidence=0.0),
+    "hybrid": Config(rerank="none", min_confidence=0.647),
+    "full": Config(min_confidence=0.065),
+    "full-maxsim": Config(rerank="maxsim", min_confidence=0.642),
 }
 
 

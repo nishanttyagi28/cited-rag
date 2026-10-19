@@ -132,10 +132,13 @@ def cmd_eval(args) -> int:
 
 
 def cmd_bench(args) -> int:
+    from .eval.calibrate import calibrate
+
     names = args.configs.split(",")
     table = {}
     for name in names:
         res = run_retrieval_eval(name, args)
+        res["summary"]["calibration"] = calibrate(res["rows"])
         _write(Path(args.out), f"retrieval_{name}.json", res)
         table[name] = res["summary"]
         print(f"{name:12s} {_fmt(res['summary'])}")
