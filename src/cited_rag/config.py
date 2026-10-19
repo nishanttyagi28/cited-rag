@@ -67,7 +67,7 @@ PRESETS: dict[str, Config] = {
         parent_context=False,
         min_confidence=0.585,
     ),
-    "hybrid": Config(rerank="none", min_confidence=0.647),
+    "hybrid": Config(rerank="none", min_confidence=0.651),
     "full": Config(min_confidence=0.065),
     "full-maxsim": Config(rerank="maxsim", min_confidence=0.642),
 }
