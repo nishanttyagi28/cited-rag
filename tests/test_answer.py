@@ -95,3 +95,11 @@ def test_blocks_dedupe_parents_and_respect_budget(tiny_index, embedder):
     blocks = build_blocks(hits, tiny_index, cfg)
     assert sum(len(b.text) for b in blocks) <= 100
     assert all(len(b.text) <= 60 for b in blocks)
+
+
+def test_normalize_citations():
+    from cited_rag.answer import normalize_citations
+
+    assert normalize_citations("A【1†L31-L34】【2†L9】.") == "A[1][2]."
+    assert normalize_citations("B [1, 3].") == "B [1][3]."
+    assert normalize_citations("C [2†source].") == "C [2]."

@@ -21,7 +21,7 @@ REFUSAL_TEXT = "I could not find this in the indexed documents."
 SYSTEM_PROMPT = f"""You answer questions using only the numbered sources provided.
 Rules:
 - Every sentence in your answer must end with one or more citations like [1] or [2][3],
-  pointing at the sources that support it.
+  pointing at the sources that support it. Use exactly that bracket format, nothing else.
 - Use only facts stated in the sources. Do not add outside knowledge.
 - Be concise: at most 5 sentences, plain prose, no headings or bullet lists.
 - If the sources do not contain the answer, reply with exactly {NO_ANSWER} and nothing else."""
@@ -158,6 +158,7 @@ class RAG:
                 break
             except RequestTooLarge:
                 blocks = blocks[:-1]  # shrink and retry
+        text = normalize_citations(text)
         if not text or NO_ANSWER in text:
             return Answer(question, REFUSAL_TEXT, True, blocks, [], None, res, {"refusal": "llm"})
         sources = {b.n: b.text for b in blocks}
@@ -174,6 +175,18 @@ class RAG:
             meta["dropped_sentences"] = len(bad)
         cited = sorted({n for n in citations(text) if n in sources})
         return Answer(question, _tidy(text), False, blocks, cited, report, res, meta)
+
+
+def normalize_citations(text: str) -> str:
+    """Map other citation styles the model sometimes uses onto [n]."""
+    text = re.sub(r"【\s*(\d+)[^】]*】", r"[\1]", text)  # 【1†L3-L9】
+    text = re.sub(r"\[(\d+)†[^\]]*\]", r"[\1]", text)  # [1†L3]
+    text = re.sub(
+        r"\[(\d+(?:\s*,\s*\d+)+)\]",
+        lambda m: "".join(f"[{n.strip()}]" for n in m.group(1).split(",")),
+        text,
+    )  # [1, 2]
+    return text
 
 
 def _tidy(text: str) -> str:
