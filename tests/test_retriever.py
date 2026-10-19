@@ -110,7 +110,7 @@ class RewriteLLM:
 
 def test_rewrite_only_for_ambiguous_queries(tiny_index, embedder):
     llm = RewriteLLM()
-    r = Retriever(tiny_index, cfg(query_rewrite=True), embedder, llm=llm)
+    r = Retriever(tiny_index, cfg(query_rewrite=True, llm_expansion=True), embedder, llm=llm)
     res = r.retrieve("what is it?")
     assert res.queries[0] == "What is confabulation in generative AI?"
     assert "confabulation definition" in res.queries

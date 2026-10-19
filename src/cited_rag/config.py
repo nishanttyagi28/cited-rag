@@ -27,15 +27,18 @@ class Config:
     top_k: int = 10
     query_expansion: bool = True
     query_rewrite: bool = True  # only acts when an LLM is available
+    llm_expansion: bool = False  # extra LLM paraphrases; costs one call per query
     parent_context: bool = True
     # refusal / fallback
     min_confidence: float = 0.0  # in the units of the final scorer, see DESIGN.md
     web_fallback: bool = False
     web_provider: str = "fake"
     # generation
-    context_chunks: int = 5
-    max_context_chars: int = 1800  # per context block, keeps Groq requests small
+    context_chunks: int = 5  # max context blocks
+    context_budget_chars: int = 8000  # total, same for every preset so comparisons are fair
+    max_block_chars: int = 3200
     grounding_threshold: float = 0.6
+    strict_grounding: bool = False  # drop unsupported sentences instead of only flagging
 
     def with_(self, **kw: Any) -> Config:
         return replace(self, **kw)

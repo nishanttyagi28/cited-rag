@@ -56,7 +56,7 @@ class Retriever:
         queries = [q]
         if self.cfg.query_expansion:
             queries += expand(q, self.index.glossary)
-            if self.llm is not None:
+            if self.cfg.llm_expansion and self.llm is not None:
                 queries += llm_expand(q, self.llm)
         return q, list(dict.fromkeys(queries))
 
