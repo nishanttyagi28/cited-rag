@@ -93,14 +93,19 @@ def is_ambiguous(query: str) -> bool:
     return (has_pronoun and not has_entity) or vague_ref
 
 
-def rewrite(query: str, llm: TextLLM, doc_titles: list[str]) -> str:
-    titles = "\n".join(f"- {t}" for t in doc_titles)
+def rewrite(query: str, llm: TextLLM, doc_titles: list[str] | None = None) -> str:
+    """Turn a vague question into a standalone search query.
+
+    Without chat history the referent of 'it' is unknown, so the model is told to drop
+    unresolved pronouns rather than guess a document; guessing hurt retrieval in testing.
+    ``doc_titles`` is accepted for callers that have real context but is not sent.
+    """
     out = llm.complete(
-        "You rewrite a vague question into one short, specific search question. Replace "
-        "pronouns like 'it' or 'the framework' with the most likely topic or document. "
-        "Name at most one document, and only if the question points to it. Keep the user's "
-        "intent and key terms. Do not answer it. Reply with the question only.",
-        f"Documents available:\n{titles}\n\nQuestion: {query}",
+        "You turn a vague question into a short standalone search query. If a pronoun "
+        "('it', 'its', 'the framework') cannot be resolved, drop it instead of guessing. "
+        "Keep every specific term from the question, and add close synonyms only. "
+        "Do not answer it. Reply with the query only.",
+        f"Question: {query}",
         max_tokens=120,
     ).strip()
     return out.splitlines()[0].strip() if out else query

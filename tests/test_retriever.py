@@ -103,7 +103,7 @@ class RewriteLLM:
 
     def complete(self, system, user, max_tokens=512):
         self.calls.append(user)
-        if "rewrite" in system.lower():
+        if "vague" in system.lower():
             return "What is confabulation in generative AI?"
         return "confabulation definition\nfalse content models"
 
