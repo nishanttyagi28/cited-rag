@@ -56,9 +56,10 @@ def kind_chart(bench: dict) -> None:
 
 
 def answer_chart(bench: dict) -> None:
-    ans = bench.get("answers")
-    if not ans:
+    sub = bench.get("answers_common_subset")
+    if not sub:
         return
+    ans = {k: v for k, v in sub.items() if k != "ids"}
     metrics = ["key_fact_recall", "citation_precision", "sentence_support_rate", "refusal_accuracy"]
     configs = list(ans)
     width = 0.8 / len(configs)
@@ -75,7 +76,8 @@ def answer_chart(bench: dict) -> None:
         [j + width * (len(configs) - 1) / 2 for j in range(len(metrics))], metrics, fontsize=8
     )
     ax.set_ylim(0, 1.1)
-    ax.set_title(f"Answer-level metrics, {next(iter(ans.values()))['model']} (chart)")
+    n = len(sub["ids"])
+    ax.set_title(f"Answer-level metrics on the {n} questions both configs answered (chart)")
     ax.legend(fontsize=8)
     fig.tight_layout()
     fig.savefig(DOCS / "chart_answers.png", dpi=130)
