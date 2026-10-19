@@ -1,0 +1,270 @@
+{
+ "retrieval": {
+  "naive": {
+   "hit@1": 0.46153846153846156,
+   "hit@3": 0.7230769230769231,
+   "hit@5": 0.8307692307692308,
+   "hit@10": 0.8923076923076924,
+   "mrr@10": 0.6206593406593406,
+   "ndcg@10": 0.5401779776472938,
+   "refusal_accuracy": 0.922077922077922,
+   "out_of_scope_refused": 0.5,
+   "answerable_wrongly_refused": 0.0,
+   "latency_p50_s": 0.0073,
+   "latency_p95_s": 0.0091,
+   "n_cases": 77,
+   "n_answerable": 65,
+   "by_kind": {
+    "acronym": {
+     "n": 2,
+     "hit@5": 0.5,
+     "mrr@10": 0.3214285714285714
+    },
+    "ambiguous": {
+     "n": 3,
+     "hit@5": 1.0,
+     "mrr@10": 0.8333333333333334
+    },
+    "factual": {
+     "n": 55,
+     "hit@5": 0.8181818181818182,
+     "mrr@10": 0.6303030303030303
+    },
+    "filtered": {
+     "n": 5,
+     "hit@5": 1.0,
+     "mrr@10": 0.5066666666666666
+    }
+   },
+   "calibration": {
+    "threshold": 0.585,
+    "calibration_accuracy": 0.9230769230769231,
+    "held_out_accuracy": 0.9210526315789473,
+    "all_accuracy": 0.922077922077922,
+    "n_calibration": 39,
+    "n_held_out": 38
+   }
+  },
+  "hybrid": {
+   "hit@1": 0.5384615384615384,
+   "hit@3": 0.7230769230769231,
+   "hit@5": 0.8615384615384616,
+   "hit@10": 0.9230769230769231,
+   "mrr@10": 0.6585225885225886,
+   "ndcg@10": 0.5892916030931808,
+   "refusal_accuracy": 0.935064935064935,
+   "out_of_scope_refused": 0.75,
+   "answerable_wrongly_refused": 0.03076923076923077,
+   "latency_p50_s": 0.0103,
+   "latency_p95_s": 0.0141,
+   "n_cases": 77,
+   "n_answerable": 65,
+   "by_kind": {
+    "acronym": {
+     "n": 2,
+     "hit@5": 0.5,
+     "mrr@10": 0.5
+    },
+    "ambiguous": {
+     "n": 3,
+     "hit@5": 1.0,
+     "mrr@10": 1.0
+    },
+    "factual": {
+     "n": 55,
+     "hit@5": 0.8545454545454545,
+     "mrr@10": 0.6146176046176047
+    },
+    "filtered": {
+     "n": 5,
+     "hit@5": 1.0,
+     "mrr@10": 1.0
+    }
+   },
+   "calibration": {
+    "threshold": 0.6506,
+    "calibration_accuracy": 0.9487179487179487,
+    "held_out_accuracy": 0.9473684210526315,
+    "all_accuracy": 0.948051948051948,
+    "n_calibration": 39,
+    "n_held_out": 38
+   }
+  },
+  "full": {
+   "hit@1": 0.6307692307692307,
+   "hit@3": 0.8615384615384616,
+   "hit@5": 0.9384615384615385,
+   "hit@10": 0.9692307692307692,
+   "mrr@10": 0.7492307692307693,
+   "ndcg@10": 0.6319947011104772,
+   "refusal_accuracy": 0.961038961038961,
+   "out_of_scope_refused": 0.75,
+   "answerable_wrongly_refused": 0.0,
+   "latency_p50_s": 0.5148,
+   "latency_p95_s": 0.574,
+   "n_cases": 77,
+   "n_answerable": 65,
+   "by_kind": {
+    "acronym": {
+     "n": 2,
+     "hit@5": 1.0,
+     "mrr@10": 0.35
+    },
+    "ambiguous": {
+     "n": 3,
+     "hit@5": 1.0,
+     "mrr@10": 1.0
+    },
+    "factual": {
+     "n": 55,
+     "hit@5": 0.9272727272727272,
+     "mrr@10": 0.7530303030303029
+    },
+    "filtered": {
+     "n": 5,
+     "hit@5": 1.0,
+     "mrr@10": 0.7166666666666667
+    }
+   },
+   "calibration": {
+    "threshold": 0.0653,
+    "calibration_accuracy": 0.9487179487179487,
+    "held_out_accuracy": 0.9736842105263158,
+    "all_accuracy": 0.961038961038961,
+    "n_calibration": 39,
+    "n_held_out": 38
+   }
+  },
+  "full-maxsim": {
+   "hit@1": 0.5538461538461539,
+   "hit@3": 0.7846153846153846,
+   "hit@5": 0.8461538461538461,
+   "hit@10": 0.9076923076923077,
+   "mrr@10": 0.6841391941391942,
+   "ndcg@10": 0.5936297600657438,
+   "refusal_accuracy": 0.961038961038961,
+   "out_of_scope_refused": 0.75,
+   "answerable_wrongly_refused": 0.0,
+   "latency_p50_s": 0.1471,
+   "latency_p95_s": 0.1818,
+   "n_cases": 77,
+   "n_answerable": 65,
+   "by_kind": {
+    "acronym": {
+     "n": 2,
+     "hit@5": 0.5,
+     "mrr@10": 0.5
+    },
+    "ambiguous": {
+     "n": 3,
+     "hit@5": 1.0,
+     "mrr@10": 1.0
+    },
+    "factual": {
+     "n": 55,
+     "hit@5": 0.8363636363636363,
+     "mrr@10": 0.6630735930735931
+    },
+    "filtered": {
+     "n": 5,
+     "hit@5": 1.0,
+     "mrr@10": 0.8
+    }
+   },
+   "calibration": {
+    "threshold": 0.6419,
+    "calibration_accuracy": 0.9743589743589743,
+    "held_out_accuracy": 0.9473684210526315,
+    "all_accuracy": 0.961038961038961,
+    "n_calibration": 39,
+    "n_held_out": 38
+   }
+  }
+ },
+ "golden": "eval/golden.jsonl",
+ "date": "2026-10-19",
+ "answers": {
+  "naive": {
+   "n_cases": 26,
+   "n_answerable": 26,
+   "key_fact_recall": 0.6346153846153846,
+   "citation_precision": 0.8095238095238095,
+   "citation_hit": 0.8571428571428571,
+   "sentence_support_rate": 0.7682539682539682,
+   "fully_grounded_answers": 0.6666666666666666,
+   "errors": 0,
+   "refusal_accuracy": 0.8076923076923077,
+   "out_of_scope_refused": 0.0,
+   "answerable_wrongly_refused": 0.19230769230769232
+  },
+  "full": {
+   "n_cases": 77,
+   "n_answerable": 65,
+   "key_fact_recall": 0.7769230769230769,
+   "citation_precision": 0.75,
+   "citation_hit": 0.8793103448275862,
+   "sentence_support_rate": 0.9089080459770116,
+   "fully_grounded_answers": 0.8620689655172413,
+   "errors": 0,
+   "refusal_accuracy": 0.9090909090909091,
+   "out_of_scope_refused": 1.0,
+   "answerable_wrongly_refused": 0.1076923076923077
+  }
+ },
+ "answers_common_subset": {
+  "ids": [
+   "rmf-01",
+   "rmf-02",
+   "rmf-03",
+   "rmf-04",
+   "rmf-05",
+   "rmf-06",
+   "rmf-07",
+   "rmf-08",
+   "rmf-09",
+   "rmf-10",
+   "rmf-11",
+   "rmf-12",
+   "rmf-13",
+   "rmf-14",
+   "rmf-15",
+   "rmf-16",
+   "rmf-17",
+   "rmf-18",
+   "gai-01",
+   "gai-02",
+   "gai-03",
+   "gai-04",
+   "gai-05",
+   "gai-06",
+   "gai-07",
+   "gai-08"
+  ],
+  "naive": {
+   "n_cases": 26,
+   "n_answerable": 26,
+   "key_fact_recall": 0.6346153846153846,
+   "citation_precision": 0.8095238095238095,
+   "citation_hit": 0.8571428571428571,
+   "sentence_support_rate": 0.7682539682539682,
+   "fully_grounded_answers": 0.6666666666666666,
+   "errors": 0,
+   "refusal_accuracy": 0.8076923076923077,
+   "out_of_scope_refused": 0.0,
+   "answerable_wrongly_refused": 0.19230769230769232
+  },
+  "full": {
+   "n_cases": 26,
+   "n_answerable": 26,
+   "key_fact_recall": 0.8461538461538461,
+   "citation_precision": 0.8,
+   "citation_hit": 0.88,
+   "sentence_support_rate": 0.9266666666666667,
+   "fully_grounded_answers": 0.88,
+   "errors": 0,
+   "refusal_accuracy": 0.9615384615384616,
+   "out_of_scope_refused": 0.0,
+   "answerable_wrongly_refused": 0.038461538461538464
+  }
+ }
+}

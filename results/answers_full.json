@@ -1,0 +1,2048 @@
+{
+ "summary": {
+  "n_cases": 77,
+  "errors": 0,
+  "key_fact_recall": 0.7769230769230769,
+  "citation_precision": 0.75,
+  "citation_hit": 0.8793103448275862,
+  "sentence_support_rate": 0.9089080459770116,
+  "fully_grounded_answers": 0.8620689655172413,
+  "refusal_accuracy": 0.9090909090909091,
+  "out_of_scope_refused": 1.0,
+  "answerable_wrongly_refused": 0.1076923076923077
+ },
+ "rows": [
+  {
+   "id": "rmf-01",
+   "kind": "factual",
+   "answerable": true,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0,
+   "grounding": null,
+   "latency_s": 1.042
+  },
+  {
+   "id": "rmf-02",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "In the AI RMF, risk is defined as the composite measure of an event\u2019s probability of occurring combined with the magnitude or degree of the consequences of that event[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      9,
+      9
+     ],
+     "url": ""
+    }
+   ],
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0,
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.201
+  },
+  {
+   "id": "rmf-03",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The AI RMF does not prescribe a specific risk tolerance; instead it leaves tolerance to be set by each organization or AI actor based on their objectives and context[1]. Risk tolerance is defined as the willingness or readiness of the organization or AI actor to accept risk in order to achieve its goals, and it can be shaped by legal, regulatory, policy, and normative influences that vary across applications, sectors, and over time[1]. The framework advises that existing laws, regulations, and sector\u2011specific guidelines should inform the definition of reasonable risk tolerance where no established standards exist[1]. Consequently, once an organization defines its own tolerance, the AI RMF can be applied to manage and document risks accordingly[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      12,
+      12
+     ],
+     "url": ""
+    }
+   ],
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0,
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 4
+   },
+   "latency_s": 59.269
+  },
+  {
+   "id": "rmf-04",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "Trustworthy AI systems are characterized as valid and reliable, safe, secure and resilient, accountable and transparent, explainable and interpret\u00adable, privacy\u2011enhanced, and fair with harmful bias managed[1][2]",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      17,
+      17
+     ],
+     "url": ""
+    },
+    {
+     "n": 2,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      5,
+      6
+     ],
+     "url": ""
+    }
+   ],
+   "citation_precision": 0.5,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0,
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.358
+  },
+  {
+   "id": "rmf-05",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "Validation is defined as \u201cconfirmation, through the provision of objective evidence, that the requirements for a specific intended use or application have been fulfilled\u201d [1]",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      18,
+      18
+     ],
+     "url": ""
+    }
+   ],
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0,
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.432
+  },
+  {
+   "id": "rmf-06",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "An AI system is considered resilient when it can withstand unexpected adverse events or changes in its environment or use, maintain its functions and structure despite internal or external change, and degrade safely and gracefully when necessary[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      20,
+      20
+     ],
+     "url": ""
+    }
+   ],
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0,
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.749
+  },
+  {
+   "id": "rmf-07",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "Explainability in the AI RMF refers to describing the mechanisms underlying how an AI system functions, essentially answering \u201chow\u201d a decision was made[1][2]. Interpretability refers to conveying the meaning or context of the system\u2019s output to users, answering \u201cwhy\u201d a decision was made and what it signifies[1][2].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      21,
+      21
+     ],
+     "url": ""
+    },
+    {
+     "n": 2,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      22,
+      23
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 2
+   },
+   "latency_s": 1.167,
+   "citation_precision": 0.5,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "rmf-08",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "NIST identifies three major categories of AI bias to be considered and managed: systemic bias, computational and statistical bias, and human\u2011cognitive bias[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      22,
+      23
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.244,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "rmf-09",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The AI RMF Core is organized around four high\u2011level functions: GOVERN, MAP, MEASURE, and MANAGE[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      25,
+      25
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.89,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "rmf-10",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The GOVERN function is designed to be a cross\u2011cutting function that is infused throughout the other AI RMF functions[2].",
+   "citations": [
+    {
+     "n": 2,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      25,
+      25
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.101,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "rmf-11",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "GOVERN 6 specifies that organizations must establish policies and procedures to manage AI risks and benefits that stem from third\u2011party software, data, and other supply\u2011chain elements, including intellectual\u2011property concerns and contingency plans for high\u2011risk failures or incidents involving those external components[2].",
+   "citations": [
+    {
+     "n": 2,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      29,
+      30
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.983,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "rmf-12",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "MEASURE 2.11 addresses the evaluation and documentation of fairness and bias in the AI system as identified in the MAP function[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      34,
+      35
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.12,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "rmf-13",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "MANAGE 4.1 requires that organizations put in place post\u2011deployment monitoring plans for AI systems, incorporating mechanisms to capture and evaluate input from users and other relevant AI actors, provide appeal and override processes, and manage de\u2011commissioning, incident response, recovery, and change management activities[1][3]",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      38,
+      40
+     ],
+     "url": ""
+    },
+    {
+     "n": 3,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      48,
+      48
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 59.272,
+   "citation_precision": 0.5,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "rmf-14",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The AI RMF is intended to be voluntary, as well as risk\u2011based, resource\u2011efficient, and pro\u2011innovation[2].",
+   "citations": [
+    {
+     "n": 2,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      46,
+      48
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.17,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "rmf-15",
+   "kind": "acronym",
+   "answerable": true,
+   "refused": false,
+   "answer": "TEVV stands for test, evaluation, verification, and validation[2].",
+   "citations": [
+    {
+     "n": 2,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      14,
+      15
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.337,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "rmf-16",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The AI RMF cites de\u2011identification and aggregation of model outputs as data\u2011minimizing methods that support privacy\u2011enhanced AI systems[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      22,
+      23
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.618,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "rmf-17",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "Third\u2011party data, software, or hardware can introduce risk both from the components themselves and from how they are used, making it harder to define and quantify hazards [1]. The risk metrics or methodologies employed by the organization that builds the AI system may differ from those used by the organization that deploys it, creating misalignment in measurement [1]. Additionally, developers may not be transparent about the risk metrics or methods they applied, further complicating assessment [1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      10,
+      11
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 0.6666666666666666,
+    "flagged": [
+     "Additionally, developers may not be transparent about the risk metrics or methods they applied, further complicating assessment ."
+    ],
+    "sentences": 3
+   },
+   "latency_s": 58.811,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "rmf-18",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "AI systems should be tested before their deployment and then regularly while they are in operation, as required by the MEASURE function\u2019s testing and monitoring processes[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      33,
+      34
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.541,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "gai-01",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The NIST Generative AI Profile was written pursuant to President Biden\u2019s Executive Order 14110 on Safe, Secure, and Trustworthy Artificial Intelligence[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      5,
+      5
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.439,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "gai-02",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The Generative AI Profile is a cross\u2011sectoral AI RMF profile rather than a sector\u2011specific one [1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      5,
+      5
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 0.0,
+    "flagged": [
+     "The Generative AI Profile is a cross\u2011sectoral AI RMF profile rather than a sector\u2011specific one ."
+    ],
+    "sentences": 1
+   },
+   "latency_s": 1.143,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "gai-03",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The public working group focused on four primary considerations for generative AI: Governance, Content Provenance, Pre\u2011deployment Testing, and Incident Disclosure[1][2]",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      6,
+      6
+     ],
+     "url": ""
+    },
+    {
+     "n": 2,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      51,
+      51
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.883,
+   "citation_precision": 0.5,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "gai-04",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "NIST defines \u201cconfabulation\u201d as the phenomenon where generative AI systems produce and confidently present erroneous or false content in response to prompts, including outputs that diverge from the prompt or contradict earlier statements, often referred to as \u201challucinations\u201d or \u201cfabrications\u201d[1]. This arises because generative models predict the next token based on statistical patterns in their training data, which can yield factually inaccurate or internally inconsistent results, especially for open\u2011ended or domain\u2011expertise\u2011heavy tasks[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      10,
+      10
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 0.5,
+    "flagged": [
+     "This arises because generative models predict the next token based on statistical patterns in their training data, which can yield factually inaccurate or internally inconsistent results, especially for open\u2011ended or domain\u2011expertise\u2011heavy tasks."
+    ],
+    "sentences": 2
+   },
+   "latency_s": 1.519,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "gai-05",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The GAI profile groups its risks into three broad categories: (1) technical or model risks (risk from malfunction such as confabulation, dangerous recommendations, data\u2011privacy issues, harmful bias, etc.), (2) misuse by humans (malicious use including CBRN information, obscene or abusive content, information integrity and security concerns), and (3) ecosystem or societal risks (impacts on the broader ecosystem and social environment)[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      7,
+      7
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 78.07,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "gai-06",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "Training, maintaining, and operating generative AI systems are resource\u2011intensive activities that can generate large energy use and carbon emissions, with a single transformer LLM training run potentially emitting as much carbon as 300 round\u2011trip flights between San Francisco and New York[1]. Inference for generative tasks such as text summarization is more energy\u2011 and carbon\u2011intensive than discriminative tasks like text classification[1]. Techniques like model distillation or compression can lower inference\u2011time impacts, but the training and fine\u2011tuning of these smaller models still contribute to overall environmental footprints[1]. Currently there is no standardized method for estimating the environmental impacts of generative AI[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      12,
+      12
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 4
+   },
+   "latency_s": 1.655,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "gai-07",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The human\u2011AI configuration risk encompasses information\u2011security concerns tied to how humans and AI systems are combined, including the tasks of AI deployment, operation, monitoring and the associated security controls [3][3]",
+   "citations": [
+    {
+     "n": 3,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      43,
+      44
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.41,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "gai-08",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The primary information\u2011integrity risk of GAI is that produced content may lack provenance, be manipulated, or contain misinformation, requiring policies, tools, and monitoring to verify authenticity and detect anomalies[1][2][3].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      23,
+      25
+     ],
+     "url": ""
+    },
+    {
+     "n": 2,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      32,
+      33
+     ],
+     "url": ""
+    },
+    {
+     "n": 3,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      28,
+      29
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.977,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "gai-09",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "Intellectual property risks can arise when a GAI system\u2019s training data includes copyrighted material that is not covered by fair\u2011use protections and the system\u2019s outputs reveal instances of that memorized data, potentially infringing on copyright [2].",
+   "citations": [
+    {
+     "n": 2,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      15,
+      15
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 57.917,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "gai-10",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The data\u2011privacy risk for generative AI includes the fact that GAI training consumes large volumes of data that may contain personal data, often without disclosed sources, which can violate transparency, consent and purpose\u2011specification principles [1]. Models can leak, generate, or correctly infer sensitive or personally identifiable information that was present in the training set, especially through data\u2011memorization during adversarial attacks [1]. They may also stitch together disparate information to infer PII that was not in the training data, producing harmful or inaccurate disclosures that can be used to disadvantage individuals [1]. This exposure of sensitive information can lead to harms such as extortion, dignitary injury, or other negative impacts on the affected person [1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      11,
+      11
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 4
+   },
+   "latency_s": 1.981,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "gai-11",
+   "kind": "acronym",
+   "answerable": true,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 57.664,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "gai-12",
+   "kind": "factual",
+   "answerable": true,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 2.066,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "gai-13",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "Suggested action MG\u20112.4\u2011004 requires establishing and regularly reviewing specific criteria that trigger the deactivation of GAI systems, aligning those criteria with the organization\u2019s defined risk tolerances and risk appetites[2].",
+   "citations": [
+    {
+     "n": 2,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      45,
+      46
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 0.0,
+    "flagged": [
+     "Suggested action MG\u20112.4\u2011004 requires establishing and regularly reviewing specific criteria that trigger the deactivation of GAI systems, aligning those criteria with the organization\u2019s defined risk tolerances and risk appetites."
+    ],
+    "sentences": 1
+   },
+   "latency_s": 58.25,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "gai-14",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "Confabulation risk is tied to the trustworthy\u2011AI characteristic of being **valid and reliable**, since hallucinated outputs undermine factual accuracy and consistency[1][3]. It also relates to **safety**, because misleading confident responses can cause harmful decisions in consequential domains[1][2]. The risk connects to **information security**, as false or fabricated citations can compromise data integrity and mislead users[2]. Finally, **explainability and interpretability** are relevant, since confabulated logic or justifications can deceive humans into over\u2011trusting the system[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      10,
+      10
+     ],
+     "url": ""
+    },
+    {
+     "n": 2,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      34,
+      36
+     ],
+     "url": ""
+    },
+    {
+     "n": 3,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      17,
+      17
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 0.0,
+    "flagged": [
+     "Confabulation risk is tied to the trustworthy\u2011AI characteristic of being **valid and reliable**, since hallucinated outputs undermine factual accuracy and consistency.",
+     "It also relates to **safety**, because misleading confident responses can cause harmful decisions in consequential domains.",
+     "The risk connects to **information security**, as false or fabricated citations can compromise data integrity and mislead users.",
+     "Finally, **explainability and interpretability** are relevant, since confabulated logic or justifications can deceive humans into over\u2011trusting the system."
+    ],
+    "sentences": 4
+   },
+   "latency_s": 2.175,
+   "citation_precision": 0.3333333333333333,
+   "citation_hit": 1.0,
+   "key_fact_recall": 0.5
+  },
+  {
+   "id": "csf-01",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The NIST CSF 2.0 Core is organized into six top\u2011level Functions: GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      8,
+      9
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.063,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "csf-02",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The CSF defines four Tiers: Partial (Tier 1), Risk\u2011Informed (Tier 2), Repeatable (Tier 3), and Adaptive (Tier 4)[1][2]",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      31,
+      32
+     ],
+     "url": ""
+    },
+    {
+     "n": 2,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      12,
+      13
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 2.015,
+   "citation_precision": 0.5,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "csf-03",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "A CSF Organizational Profile can contain a Current Profile, which details the outcomes the organization is presently achieving, and a Target Profile, which specifies the desired outcomes the organization aims to achieve[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      11,
+      11
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 57.722,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "csf-04",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "A CSF Community Profile is a baseline of CSF outcomes that is created and published to address shared interests and goals among a number of organizations, typically developed for a particular sector, subsector, technology, threat type, or other use case, and can be used by an organization as the basis for its own Target Profile[1][2].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      31,
+      32
+     ],
+     "url": ""
+    },
+    {
+     "n": 2,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      11,
+      11
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 2.026,
+   "citation_precision": 0.5,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "csf-05",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The CSF is supplemented by three kinds of online resources: Informative References, Implementation Examples, and Quick\u2011Start Guides [1][1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      14,
+      14
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.191,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "csf-06",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The GV.SC category addresses Cybersecurity Supply Chain Risk Management, a systematic process for managing exposure to cybersecurity risk throughout supply chains and for developing appropriate response strategies, policies, processes, and procedures [2][3]. It includes planning and due\u2011diligence before entering supplier relationships, understanding and monitoring supplier\u2011related risks, integrating suppliers into incident planning, embedding supply\u2011chain security practices into overall risk programs, and handling post\u2011partnership activities [3]. [2]",
+   "citations": [
+    {
+     "n": 2,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      18,
+      19
+     ],
+     "url": ""
+    },
+    {
+     "n": 3,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      23,
+      24
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 2
+   },
+   "latency_s": 2.336,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "csf-07",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The Risk Assessment (ID.RA\u2011P) category produces an understanding of the privacy risks to individuals and how those risks may create downstream impacts on the organization\u2019s mission, functions, other risk\u2011management priorities (such as compliance or financial concerns), reputation, workforce and culture[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-privacy-framework-1.0",
+     "pages": [
+      24,
+      25
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 57.693,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "csf-08",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "CSF 2.0 adds explicit emphasis on governance and supply\u2011chain considerations, which were not highlighted in earlier versions[2]. It expands the Quick\u2011Start Guides to make the framework more accessible to smaller organizations as well as larger ones[2]. The update also introduces regularly refreshed Implementation Examples and Informative References to aid organizations in selecting outcomes and controls[2][3]. Additionally, CSF 2.0 provides tools for creating current\u2011state and target\u2011state Organizational Profiles to compare and accelerate security\u2011control implementation[2]. These features together broaden the framework\u2019s applicability and support continuous risk management[2].",
+   "citations": [
+    {
+     "n": 2,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      5,
+      5
+     ],
+     "url": ""
+    },
+    {
+     "n": 3,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      14,
+      14
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 0.2,
+    "flagged": [
+     "CSF 2.0 adds explicit emphasis on governance and supply\u2011chain considerations, which were not highlighted in earlier versions.",
+     "It expands the Quick\u2011Start Guides to make the framework more accessible to smaller organizations as well as larger ones.",
+     "The update also introduces regularly refreshed Implementation Examples and Informative References to aid organizations in selecting outcomes and controls.",
+     "These features together broaden the framework\u2019s applicability and support continuous risk management."
+    ],
+    "sentences": 5
+   },
+   "latency_s": 2.149,
+   "citation_precision": 0.5,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "ssdf-01",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The SSDF organizes its practices into four groups: Prepare the Organization (PO), Protect the Software (PS), Produce Well\u2011Secured Software (PW), and Respond to Vulnerabilities (RV) [1][1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-sp-800-218-ssdf",
+     "pages": [
+      13,
+      13
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 57.935,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "ssdf-02",
+   "kind": "factual",
+   "answerable": true,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 1.717,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "ssdf-03",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The SSDF recommends that provenance data for each software\u2011release component be collected and maintained in a software bill of materials (SBOM) and that this SBOM be safeguarded, shared, and updated as components change[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-sp-800-218-ssdf",
+     "pages": [
+      19,
+      19
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.42,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "ssdf-04",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "PW.1.1 recommends using forms of risk modeling such as threat modeling, attack modeling, or attack\u2011surface mapping to assess the software\u2019s security risk[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-sp-800-218-ssdf",
+     "pages": [
+      20,
+      20
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 2.151,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "ssdf-05",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The SSDF recommends using fuzz testing tools to find issues with input handling[1]",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-sp-800-218-ssdf",
+     "pages": [
+      24,
+      24
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.04,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "ssdf-06",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "Vulnerability information under RV.1.1 should be gathered from software acquirers, users, and public sources such as vulnerability databases and security mailing lists[2].",
+   "citations": [
+    {
+     "n": 2,
+     "doc_id": "nist-sp-800-218-ssdf",
+     "pages": [
+      25,
+      26
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.971,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "ssdf-07",
+   "kind": "factual",
+   "answerable": true,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 57.523,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "ssdf-08",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "NIST SP 800\u2011218 was published in February 2022[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-sp-800-218-ssdf",
+     "pages": [
+      36,
+      36
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 2.116,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "ssdf-09",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The SSDF does not prescribe how to implement each practice, focusing instead on the desired outcomes rather than specific tools, techniques, or mechanisms [3]",
+   "citations": [
+    {
+     "n": 3,
+     "doc_id": "nist-sp-800-218-ssdf",
+     "pages": [
+      8,
+      9
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.281,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "pf-01",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The NIST Privacy Framework defines five Functions: Identify\u2011P, Govern\u2011P, Control\u2011P, Communicate\u2011P, and Protect\u2011P[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-privacy-framework-1.0",
+     "pages": [
+      10,
+      11
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.929,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "pf-02",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The NIST Privacy Framework is composed of three parts: the Core, which defines privacy protection activities and outcomes; Profiles, which represent an organization\u2019s current or desired privacy activities; and Implementation Tiers, which indicate the adequacy of processes and resources for managing privacy risk [1][2].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-privacy-framework-1.0",
+     "pages": [
+      6,
+      6
+     ],
+     "url": ""
+    },
+    {
+     "n": 2,
+     "doc_id": "nist-privacy-framework-1.0",
+     "pages": [
+      2,
+      2
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.245,
+   "citation_precision": 0.5,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "pf-03",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "Organizations can respond to privacy risk by mitigating it through technical or policy measures, transferring or sharing it via contracts, privacy notices, or consent mechanisms, avoiding it by foregoing or terminating data processing when risks outweigh benefits, or accepting it when the potential impact on individuals is minimal and the benefits justify the risk[1][2]",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-privacy-framework-1.0",
+     "pages": [
+      9,
+      9
+     ],
+     "url": ""
+    },
+    {
+     "n": 2,
+     "doc_id": "nist-privacy-framework-1.0",
+     "pages": [
+      39,
+      40
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.955,
+   "citation_precision": 0.5,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "pf-04",
+   "kind": "factual",
+   "answerable": true,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 57.689,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "pf-05",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "Low levels of predictability, manageability, or disassociability may signal increased privacy risk[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-privacy-framework-1.0",
+     "pages": [
+      37,
+      38
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.99,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "pf-06",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "ID.RA\u2011P3 requires that the organization identify potential problematic data actions and the associated problems they may cause [1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-privacy-framework-1.0",
+     "pages": [
+      24,
+      25
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.137,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "pf-07",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The NIST Privacy Framework version 1.0 was published on January 16, 2020[1][2]",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-privacy-framework-1.0",
+     "pages": [
+      1,
+      1
+     ],
+     "url": ""
+    },
+    {
+     "n": 2,
+     "doc_id": "nist-privacy-framework-1.0",
+     "pages": [
+      3,
+      4
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 2.023,
+   "citation_precision": 0.5,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "pf-08",
+   "kind": "factual",
+   "answerable": true,
+   "refused": false,
+   "answer": "The Disassociated Processing (CT.DP\u2011P) category aims to increase the disassociability of data\u2011processing solutions in line with an organization\u2019s risk strategy so as to protect individuals\u2019 privacy and support the implementation of privacy principles such as data minimization[1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-privacy-framework-1.0",
+     "pages": [
+      27,
+      28
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.305,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "amb-01",
+   "kind": "ambiguous",
+   "answerable": true,
+   "refused": false,
+   "answer": "Confabulation is the generation of confidently presented but erroneous or false content by generative AI systems, often called \u201challucinations\u201d or \u201cfabrications\u201d[1]. It arises because models predict the next token based on statistical patterns, which can yield factually inaccurate or internally inconsistent outputs, especially for open\u2011ended or domain\u2011expertise prompts[1]. Confabulated outputs may include misleading logic, citations, or false claims of human traits, increasing the risk that users trust and act on false information[1]. Such false content can cause serious harms in consequential applications, such as incorrect medical diagnoses, and is a key technical/model risk identified for GAI[2][3]. The spread of confabulated misinformation or disinformation at scale can erode public trust and enable malicious actors to deceive audiences[3].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      10,
+      10
+     ],
+     "url": ""
+    },
+    {
+     "n": 2,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      7,
+      8
+     ],
+     "url": ""
+    },
+    {
+     "n": 3,
+     "doc_id": "nist-ai-600-1-genai-profile",
+     "pages": [
+      14,
+      14
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 0.6,
+    "flagged": [
+     "Confabulated outputs may include misleading logic, citations, or false claims of human traits, increasing the risk that users trust and act on false information.",
+     "Such false content can cause serious harms in consequential applications, such as incorrect medical diagnoses, and is a key technical/model risk identified for GAI."
+    ],
+    "sentences": 5
+   },
+   "latency_s": 2.098,
+   "citation_precision": 0.6666666666666666,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "amb-02",
+   "kind": "ambiguous",
+   "answerable": true,
+   "refused": false,
+   "answer": "The Secure Software Development Framework organizes its practices into four groups: Prepare the Organization (PO), Protect the Software (PS), Produce Well\u2011Secured Software (PW), and Respond to Vulnerabilities (RV) [1].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-sp-800-218-ssdf",
+     "pages": [
+      13,
+      13
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 57.693,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "amb-03",
+   "kind": "ambiguous",
+   "answerable": true,
+   "refused": false,
+   "answer": "The Privacy Framework defines five Functions: Identify\u2011P, Govern\u2011P, Control\u2011P, Communicate\u2011P, and Protect\u2011P[2].",
+   "citations": [
+    {
+     "n": 2,
+     "doc_id": "nist-privacy-framework-1.0",
+     "pages": [
+      10,
+      11
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 2.027,
+   "citation_precision": 1.0,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "flt-01",
+   "kind": "filtered",
+   "answerable": true,
+   "refused": false,
+   "answer": "The CSF defines four Tiers that describe an organization\u2019s cybersecurity risk governance and management rigor: Tier 1 \u2013 Partial, with ad\u2011hoc, informal risk practices; Tier 2 \u2013 Risk\u2011Informed, where risk management is approved by leadership but not yet organization\u2011wide policy; Tier 3 \u2013 Repeatable, with formally approved, policy\u2011based risk processes that are regularly updated and shared; and Tier 4 \u2013 Adaptive, representing agile, continuously improving, risk\u2011informed practices [1][2]",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      12,
+      13
+     ],
+     "url": ""
+    },
+    {
+     "n": 2,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      29,
+      29
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 58.548,
+   "citation_precision": 0.5,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "flt-02",
+   "kind": "filtered",
+   "answerable": true,
+   "refused": false,
+   "answer": "The GOVERN function establishes the organization\u2019s cybersecurity context by defining its strategy, supply\u2011chain risk management approach, roles, responsibilities, authorities, policies, and oversight mechanisms [1][2].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      8,
+      9
+     ],
+     "url": ""
+    },
+    {
+     "n": 2,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      16,
+      16
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.562,
+   "citation_precision": 0.5,
+   "citation_hit": 1.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "flt-03",
+   "kind": "filtered",
+   "answerable": true,
+   "refused": false,
+   "answer": "The GOVERN function helps organizations define and document the policies, processes, procedures, and practices for mapping, measuring, and managing AI risks, making these controls transparent and effectively implemented[2]. It establishes clear accountability structures, assigning roles, responsibilities, and communication lines so teams and individuals are empowered, trained, and able to oversee AI risk management[2]. It also requires ongoing monitoring, periodic review, and inventorying of AI systems, as well as safe decommissioning practices[2]. Additionally, GOVERN promotes interdisciplinary, demographically diverse teams and mechanisms for incorporating feedback from impacted individuals and external AI actors to align system design with broader societal values[1][2].",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      46,
+      47
+     ],
+     "url": ""
+    },
+    {
+     "n": 2,
+     "doc_id": "nist-ai-rmf-1.0",
+     "pages": [
+      27,
+      28
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 0.75,
+    "flagged": [
+     "It also requires ongoing monitoring, periodic review, and inventorying of AI systems, as well as safe decommissioning practices."
+    ],
+    "sentences": 4
+   },
+   "latency_s": 58.999,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "flt-04",
+   "kind": "filtered",
+   "answerable": true,
+   "refused": false,
+   "answer": "The CSF Core Functions that organize cybersecurity outcomes at their highest level are GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER[1][3]",
+   "citations": [
+    {
+     "n": 1,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      8,
+      9
+     ],
+     "url": ""
+    },
+    {
+     "n": 3,
+     "doc_id": "nist-csf-2.0",
+     "pages": [
+      6,
+      6
+     ],
+     "url": ""
+    }
+   ],
+   "grounding": {
+    "supported_rate": 1.0,
+    "flagged": [],
+    "sentences": 1
+   },
+   "latency_s": 1.889,
+   "citation_precision": 0.5,
+   "citation_hit": 1.0,
+   "key_fact_recall": 1.0
+  },
+  {
+   "id": "flt-05",
+   "kind": "filtered",
+   "answerable": true,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 56.842,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "adv-01",
+   "kind": "adversarial",
+   "answerable": false,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 0.56,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "adv-02",
+   "kind": "adversarial",
+   "answerable": false,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 0.597,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "adv-03",
+   "kind": "adversarial",
+   "answerable": false,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 0.488,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "adv-04",
+   "kind": "adversarial",
+   "answerable": false,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 0.464,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "adv-05",
+   "kind": "adversarial",
+   "answerable": false,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 0.468,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "adv-06",
+   "kind": "adversarial",
+   "answerable": false,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 1.074,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "adv-07",
+   "kind": "adversarial",
+   "answerable": false,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 56.636,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "adv-08",
+   "kind": "adversarial",
+   "answerable": false,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 3.392,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "adv-09",
+   "kind": "adversarial",
+   "answerable": false,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 0.47,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "adv-10",
+   "kind": "adversarial",
+   "answerable": false,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 0.525,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "adv-11",
+   "kind": "adversarial",
+   "answerable": false,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 0.471,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  },
+  {
+   "id": "adv-12",
+   "kind": "adversarial",
+   "answerable": false,
+   "refused": true,
+   "answer": "I could not find this in the indexed documents.",
+   "citations": [],
+   "grounding": null,
+   "latency_s": 0.461,
+   "citation_precision": 0.0,
+   "citation_hit": 0.0,
+   "key_fact_recall": 0.0
+  }
+ ],
+ "config_name": "full",
+ "model": "openai/gpt-oss-120b",
+ "llm_usage": {
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "calls": 0
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "full_set": {
+  "naive": {
+   "n_cases": 26,
+   "n_answerable": 26,
+   "key_fact_recall": 0.6346153846153846,
+   "citation_precision": 0.8095238095238095,
+   "citation_hit": 0.8571428571428571,
+   "sentence_support_rate": 0.7682539682539682,
+   "fully_grounded_answers": 0.6666666666666666,
+   "errors": 0,
+   "refusal_accuracy": 0.8076923076923077,
+   "out_of_scope_refused": 0.0,
+   "answerable_wrongly_refused": 0.19230769230769232
+  },
+  "full": {
+   "n_cases": 77,
+   "n_answerable": 65,
+   "key_fact_recall": 0.7769230769230769,
+   "citation_precision": 0.75,
+   "citation_hit": 0.8793103448275862,
+   "sentence_support_rate": 0.9089080459770116,
+   "fully_grounded_answers": 0.8620689655172413,
+   "errors": 0,
+   "refusal_accuracy": 0.9090909090909091,
+   "out_of_scope_refused": 1.0,
+   "answerable_wrongly_refused": 0.1076923076923077
+  }
+ },
+ "common_subset": {
+  "ids": [
+   "rmf-01",
+   "rmf-02",
+   "rmf-03",
+   "rmf-04",
+   "rmf-05",
+   "rmf-06",
+   "rmf-07",
+   "rmf-08",
+   "rmf-09",
+   "rmf-10",
+   "rmf-11",
+   "rmf-12",
+   "rmf-13",
+   "rmf-14",
+   "rmf-15",
+   "rmf-16",
+   "rmf-17",
+   "rmf-18",
+   "gai-01",
+   "gai-02",
+   "gai-03",
+   "gai-04",
+   "gai-05",
+   "gai-06",
+   "gai-07",
+   "gai-08"
+  ],
+  "naive": {
+   "n_cases": 26,
+   "n_answerable": 26,
+   "key_fact_recall": 0.6346153846153846,
+   "citation_precision": 0.8095238095238095,
+   "citation_hit": 0.8571428571428571,
+   "sentence_support_rate": 0.7682539682539682,
+   "fully_grounded_answers": 0.6666666666666666,
+   "errors": 0,
+   "refusal_accuracy": 0.8076923076923077,
+   "out_of_scope_refused": 0.0,
+   "answerable_wrongly_refused": 0.19230769230769232
+  },
+  "full": {
+   "n_cases": 26,
+   "n_answerable": 26,
+   "key_fact_recall": 0.8461538461538461,
+   "citation_precision": 0.8,
+   "citation_hit": 0.88,
+   "sentence_support_rate": 0.9266666666666667,
+   "fully_grounded_answers": 0.88,
+   "errors": 0,
+   "refusal_accuracy": 0.9615384615384616,
+   "out_of_scope_refused": 0.0,
+   "answerable_wrongly_refused": 0.038461538461538464
+  }
+ }
+}
