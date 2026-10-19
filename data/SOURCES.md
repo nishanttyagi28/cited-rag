@@ -13,6 +13,9 @@ NIST's own statement: <https://www.nist.gov/oism/copyrights>.
 | nist-sp-800-218-ssdf.pdf | NIST SP 800-218, Secure Software Development Framework 1.1 | 2022 | 36 | https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf |
 | nist-privacy-framework-1.0.pdf | NIST Privacy Framework 1.0 | 2020 | 43 | https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.01162020.pdf |
 
+The PDFs are not stored in git. `python scripts/fetch_data.py` downloads them from the
+URLs above and checks each file against the sha256 in `manifest.json`.
+
 Page numbers everywhere in this project are **physical PDF pages, 1-based** (what a PDF
 viewer shows in its page box), not the printed folio in the page footer. For example the
 AI RMF executive summary is PDF page 6 but is printed as "Page 1".
