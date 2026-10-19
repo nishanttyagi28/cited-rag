@@ -36,7 +36,7 @@ Why this works for these documents:
   truncated by the encoder. Bigger chunks would be cut off; smaller chunks lose the
   surrounding definition that most questions need.
 * 50 tokens of overlap (10%) means a sentence that straddles a window edge appears whole
-  in at least one chunk, at the cost of ~15% more chunks (340 vs 295 for zero overlap).
+  in at least one chunk, at the cost of ~15% more chunks (323 vs 281 for zero overlap).
 
 Tradeoffs:
 
