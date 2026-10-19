@@ -71,3 +71,24 @@ def test_load_golden_rejects_duplicates(tmp_path):
     )
     with pytest.raises(ValueError):
         load_golden(p)
+
+
+def test_calibrate_threshold_separates_scores():
+    from cited_rag.eval.calibrate import accuracy, best_threshold, calibrate
+
+    rows = [
+        {"confidence": c, "answerable": a}
+        for c, a in [
+            (0.9, True),
+            (0.1, False),
+            (0.8, True),
+            (0.2, False),
+            (0.7, True),
+            (0.05, False),
+        ]
+    ]
+    t = best_threshold(rows)
+    assert 0.2 < t < 0.7
+    assert accuracy(rows, t) == 1.0
+    out = calibrate(rows)
+    assert out["held_out_accuracy"] == 1.0 and out["n_held_out"] == 4
