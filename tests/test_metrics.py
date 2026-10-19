@@ -99,3 +99,39 @@ def test_calibrate_threshold_separates_scores():
 def test_key_fact_matching_ignores_dash_style():
     assert key_fact_recall("Risk\u2011Informed (Tier 2)", ["risk informed"]) == 1.0
     assert key_fact_recall("non sector specific", ["non-sector-specific"]) == 1.0
+
+
+def test_key_fact_matching_ignores_soft_hyphens():
+    assert (
+        key_fact_recall("explainable and interpret\u00adable", ["explainable and interpretable"])
+        == 1.0
+    )
+
+
+def test_eval_answers_rescores_cached_rows(tmp_path, tiny_index, embedder):
+    import json as _json
+
+    from cited_rag.answer import RAG
+    from cited_rag.eval.runner import eval_answers
+    from cited_rag.llm import FakeLLM
+
+    case = GoldenCase("c1", "fuzz testing", "sec", [3], ["fuzz testing"])
+    cache = tmp_path / "a.jsonl"
+    row = {
+        "id": "c1",
+        "kind": "factual",
+        "answerable": True,
+        "refused": False,
+        "answer": "Use fuzz testing [1].",
+        "grounding": None,
+        "latency_s": 0.1,
+        "citations": [{"n": 1, "doc_id": "sec", "pages": [3, 3], "url": ""}],
+        "key_fact_recall": 0.0,
+    }
+    cache.write_text(_json.dumps(row) + "\n")
+    llm = FakeLLM("should not be called")
+    rag = RAG(Retriever(tiny_index, Config(rerank="none"), embedder), llm)
+    out = eval_answers(rag, [case], cache)
+    assert llm.calls == []
+    r = out["rows"][0]
+    assert r["key_fact_recall"] == 1.0 and r["citation_precision"] == 1.0

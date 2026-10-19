@@ -96,6 +96,24 @@ def eval_retrieval(retriever: Retriever, cases: list[GoldenCase]) -> dict[str, A
     return {"summary": summary, "rows": rows}
 
 
+def _rescore(row: dict[str, Any], case: GoldenCase) -> dict[str, Any]:
+    """(Re)compute answer metrics from a stored answer, so metric fixes apply to cached runs."""
+    if "error" in row:
+        return row
+    rels = [
+        is_relevant(c["doc_id"], range(c["pages"][0], c["pages"][1] + 1), case.doc, case.pages)
+        if case.doc
+        else False
+        for c in row["citations"]
+    ]
+    row["citation_precision"] = mean([float(x) for x in rels]) if rels else 0.0
+    row["citation_hit"] = float(any(rels))
+    row["key_fact_recall"] = (
+        key_fact_recall(row["answer"], case.key_facts) if not row["refused"] else 0.0
+    )
+    return row
+
+
 def eval_answers(
     rag: RAG,
     cases: list[GoldenCase],
@@ -110,7 +128,7 @@ def eval_answers(
     rows = []
     for case in cases:
         if case.id in done:
-            rows.append(done[case.id])
+            rows.append(_rescore(done[case.id], case))
             continue
         t0 = time.perf_counter()
         try:
@@ -126,12 +144,6 @@ def eval_answers(
                 progress(f"{case.id} ERROR {row['error'][:120]}")
             continue
         d = a.to_dict()
-        rels = [
-            is_relevant(c["doc_id"], range(c["pages"][0], c["pages"][1] + 1), case.doc, case.pages)
-            if case.doc
-            else False
-            for c in d["citations"]
-        ]
         row = {
             "id": case.id,
             "kind": case.kind,
@@ -139,12 +151,10 @@ def eval_answers(
             "refused": a.refused,
             "answer": a.text,
             "citations": d["citations"],
-            "citation_precision": mean([float(x) for x in rels]) if rels else 0.0,
-            "citation_hit": float(any(rels)),
-            "key_fact_recall": key_fact_recall(a.text, case.key_facts) if not a.refused else 0.0,
             "grounding": d["grounding"],
             "latency_s": round(time.perf_counter() - t0, 3),
         }
+        row = _rescore(row, case)
         rows.append(row)
         if cache_path:
             with open(cache_path, "a") as f:
