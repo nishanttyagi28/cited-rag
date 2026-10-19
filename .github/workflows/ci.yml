@@ -18,6 +18,12 @@ jobs:
         run: |
           pip install torch --index-url https://download.pytorch.org/whl/cpu
           pip install -e ".[dev]"
+      - uses: actions/cache@v4
+        with:
+          path: data/*.pdf
+          key: corpus-${{ hashFiles('data/manifest.json') }}
+      - name: fetch corpus
+        run: python scripts/fetch_data.py
       - name: ruff
         run: |
           ruff check .
@@ -42,5 +48,11 @@ jobs:
         run: |
           pip install torch --index-url https://download.pytorch.org/whl/cpu
           pip install -e ".[dev]"
+      - uses: actions/cache@v4
+        with:
+          path: data/*.pdf
+          key: corpus-${{ hashFiles('data/manifest.json') }}
+      - name: fetch corpus
+        run: python scripts/fetch_data.py
       - name: slow tests with real models
         run: pytest -m slow -q
