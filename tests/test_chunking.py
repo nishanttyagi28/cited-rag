@@ -75,3 +75,8 @@ def test_parent_page_breaks_map_offsets_to_pages():
     assert (p.page_start, p.page_end) == (7, 8)
     assert p.page_at(0) == 7
     assert p.page_at(p.text.index("b0")) == 8
+
+
+def test_clean_text_drops_toc_leader_lines():
+    assert clean_text("Contents\n1.2 Risk tolerance ........ 7\nBody text") == "Contents\nBody text"
+    assert clean_text("3.1 Valid . . . . . . . . 13\nok") == "ok"

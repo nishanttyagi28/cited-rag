@@ -10,10 +10,13 @@ import pymupdf
 from .types import Page
 
 _WS = re.compile(r"[ \t]+")
+_LEADER = re.compile(r"(\.\s?){6,}")
 
 
 def clean_text(text: str) -> str:
     text = text.replace("\u00ad", "")
+    # drop table-of-contents style lines ("1.2 Risk tolerance ........ 7")
+    text = "\n".join(ln for ln in text.splitlines() if not _LEADER.search(ln))
     text = re.sub(r"(\w)-\n(\w)", r"\1\2", text)  # join hyphenated line breaks
     text = _WS.sub(" ", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
