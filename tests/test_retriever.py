@@ -124,3 +124,8 @@ def test_acronym_mining_handles_embedded_caps():
     g = mine_acronyms("profile for Generative AI (GAI) and the Cybersecurity Framework (CSF)")
     assert g == {"GAI": "Generative AI", "CSF": "Cybersecurity Framework"}
     assert expand("AI risks", {"AI": "Artificial intelligence"}) == []
+
+
+def test_expand_does_not_double_expand():
+    g = {"NIST": "National Institute of Standards and Technology"}
+    assert expand("NIST (National Institute of Standards and Technology) guidance", g) == []

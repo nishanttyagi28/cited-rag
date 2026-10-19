@@ -59,10 +59,12 @@ def expand(query: str, glossary: dict[str, str]) -> list[str]:
     for acro, long in glossary.items():
         if len(acro.rstrip("s")) < 3:  # two-letter codes (AI, SP, ID) are too ambiguous
             continue
-        if re.search(rf"\b{re.escape(acro)}\b", query):
-            expanded = re.sub(rf"\b{re.escape(acro)}\b", f"{acro} ({long})", expanded)
-        elif long.lower() in query.lower():
-            expanded = f"{expanded} {acro}"
+        has_acro = re.search(rf"\b{re.escape(acro)}\b", query) is not None
+        if long.lower() in query.lower():
+            if not has_acro:
+                expanded = f"{expanded} {acro}"
+        elif has_acro:
+            expanded = re.sub(rf"\b{re.escape(acro)}\b", f"{acro} ({long})", expanded, count=1)
     if expanded != query:
         variants.append(expanded)
     return variants
@@ -94,8 +96,10 @@ def is_ambiguous(query: str) -> bool:
 def rewrite(query: str, llm: TextLLM, doc_titles: list[str]) -> str:
     titles = "\n".join(f"- {t}" for t in doc_titles)
     out = llm.complete(
-        "You rewrite vague questions into one specific, self-contained search question. "
-        "Keep the user's intent. Do not answer it. Reply with the question only.",
+        "You rewrite a vague question into one short, specific search question. Replace "
+        "pronouns like 'it' or 'the framework' with the most likely topic or document. "
+        "Name at most one document, and only if the question points to it. Keep the user's "
+        "intent and key terms. Do not answer it. Reply with the question only.",
         f"Documents available:\n{titles}\n\nQuestion: {query}",
         max_tokens=120,
     ).strip()
