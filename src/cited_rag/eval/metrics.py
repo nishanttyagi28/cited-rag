@@ -46,6 +46,7 @@ def key_fact_recall(answer: str, facts: Sequence[Sequence[str] | str]) -> float:
 
 def _norm(text: str) -> str:
     """Lowercase, unify unicode dashes and treat hyphens as spaces."""
+    text = text.replace("\u00ad", "")  # soft hyphens copied from the PDF text
     text = re.sub(r"[\u2010-\u2015\-]", " ", text.lower())
     return " ".join(text.split())
 

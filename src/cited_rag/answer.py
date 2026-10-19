@@ -190,4 +190,4 @@ def normalize_citations(text: str) -> str:
 
 
 def _tidy(text: str) -> str:
-    return re.sub(r"\s+", " ", text).strip()
+    return re.sub(r"\s+", " ", text.replace("\u00ad", "")).strip()
