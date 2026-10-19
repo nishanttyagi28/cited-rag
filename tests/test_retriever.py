@@ -118,3 +118,9 @@ def test_rewrite_only_for_ambiguous_queries(tiny_index, embedder):
     n = len(llm.calls)
     r.retrieve("Which practice covers fuzz testing in SSDF?")
     assert len(llm.calls) == n + 1  # expansion only, no rewrite
+
+
+def test_acronym_mining_handles_embedded_caps():
+    g = mine_acronyms("profile for Generative AI (GAI) and the Cybersecurity Framework (CSF)")
+    assert g == {"GAI": "Generative AI", "CSF": "Cybersecurity Framework"}
+    assert expand("AI risks", {"AI": "Artificial intelligence"}) == []

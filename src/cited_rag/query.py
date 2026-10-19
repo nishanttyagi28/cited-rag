@@ -16,21 +16,37 @@ class TextLLM(Protocol):
     def complete(self, system: str, user: str, max_tokens: int = 512) -> str: ...
 
 
+def _subsequence(needle: str, hay: str) -> bool:
+    it = iter(hay)
+    return all(ch in it for ch in needle)
+
+
+def _matches(acro: str, words: list[str]) -> bool:
+    letters = acro.lower().rstrip("s") if acro.endswith("s") and len(acro) > 2 else acro.lower()
+    content = [w for w in words if w.lower() not in _SMALL]
+    if not content or content[0][0].lower() != letters[0]:
+        return False
+    initials = "".join(w if (w.isupper() and len(w) > 1) else w[0] for w in content).lower()
+    return _subsequence(initials, letters) and _subsequence(letters, "".join(words).lower())
+
+
+_SMALL = {"and", "of", "the", "for", "to", "in", "on"}
+
+
 def mine_acronyms(text: str) -> dict[str, str]:
-    """Find 'Long Form Words (LFW)' patterns whose initials match the acronym."""
+    """Find 'Long Form Words (LFW)' patterns. The long form is the shortest run of words
+    before the parenthesis whose initials fit the acronym (handles 'Generative AI (GAI)'
+    and 'Cybersecurity Framework (CSF)')."""
     glossary: dict[str, str] = {}
     for long, acro in _ACRO.findall(text.replace("\n", " ")):
         words = _WORD.findall(long)
-        letters = [c for c in acro if c.isupper()]
-        n = len(letters)
-        if n < 2 or len(words) < n:
+        if len(acro) < 2:
             continue
-        cand = words[-n:]
-        # allow small words like "and"/"of" inside: try widening by up to 2 words
-        for extra in range(0, 3):
-            cand = words[-(n + extra) :]
-            initials = [w[0].upper() for w in cand if w.lower() not in {"and", "of", "the", "for"}]
-            if initials == letters:
+        for n in range(1, min(len(words), len(acro) + 3) + 1):
+            cand = words[-n:]
+            if cand[0].lower() in _SMALL:
+                continue
+            if _matches(acro, cand):
                 glossary.setdefault(acro, " ".join(cand))
                 break
     return glossary
@@ -41,6 +57,8 @@ def expand(query: str, glossary: dict[str, str]) -> list[str]:
     variants: list[str] = []
     expanded = query
     for acro, long in glossary.items():
+        if len(acro.rstrip("s")) < 3:  # two-letter codes (AI, SP, ID) are too ambiguous
+            continue
         if re.search(rf"\b{re.escape(acro)}\b", query):
             expanded = re.sub(rf"\b{re.escape(acro)}\b", f"{acro} ({long})", expanded)
         elif long.lower() in query.lower():
