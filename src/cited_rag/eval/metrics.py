@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import math
+import re
 from collections.abc import Sequence
 
 
@@ -35,12 +36,18 @@ def key_fact_recall(answer: str, facts: Sequence[Sequence[str] | str]) -> float:
     acceptable alternatives; matching is case-insensitive substring."""
     if not facts:
         return 1.0
-    a = " ".join(answer.lower().split())
+    a = _norm(answer)
     found = 0
     for f in facts:
         alts = [f] if isinstance(f, str) else list(f)
-        found += any(alt.lower() in a for alt in alts)
+        found += any(_norm(alt) in a for alt in alts)
     return found / len(facts)
+
+
+def _norm(text: str) -> str:
+    """Lowercase, unify unicode dashes and treat hyphens as spaces."""
+    text = re.sub(r"[\u2010-\u2015\-]", " ", text.lower())
+    return " ".join(text.split())
 
 
 def mean(xs: Sequence[float]) -> float:

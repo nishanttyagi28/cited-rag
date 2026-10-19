@@ -94,3 +94,8 @@ def test_calibrate_threshold_separates_scores():
     assert accuracy(rows, t) == 1.0
     out = calibrate(rows)
     assert out["held_out_accuracy"] == 1.0 and out["n_held_out"] == 4
+
+
+def test_key_fact_matching_ignores_dash_style():
+    assert key_fact_recall("Risk\u2011Informed (Tier 2)", ["risk informed"]) == 1.0
+    assert key_fact_recall("non sector specific", ["non-sector-specific"]) == 1.0
