@@ -87,8 +87,8 @@ questions score < 0.01).
 
 ## Late interaction (MaxSim)
 
-`rerank="maxsim"` scores candidates with ColBERT-style MaxSim over **bge-small's own
-token embeddings**, averaged over query tokens so the score stays in [-1, 1]. Document
+`rerank="maxsim"` scores candidates with ColBERT-style MaxSim over bge-small's own
+token embeddings, averaged over query tokens so the score stays in [-1, 1]. Document
 token matrices are cached on disk with the same content-hash cache.
 
 Limits: this is not ColBERT. bge-small was trained to produce a pooled
