@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Guidance for anyone (human or tool) changing this repo.
+Notes for anyone changing this repo.
 
 ## Setup
 
