@@ -1,8 +1,7 @@
 # Design notes
 
-This file explains why the pipeline looks the way it does, what each piece costs, and
-where it falls short. Numbers quoted here come from `results/`; see the README for the
-full tables.
+Why the pipeline looks like this, what each piece costs, and where it falls short.
+Numbers come from `results/`. The README has the full tables.
 
 ## Pipeline
 
@@ -21,7 +20,7 @@ question
 
 ## Chunking
 
-Default: **500 tokens, 50 overlap**, measured with the embedding model's own tokenizer
+Default: 500 tokens, 50 overlap, measured with the embedding model's own tokenizer
 (`BAAI/bge-small-en-v1.5`, WordPiece). Chunks never cross a section boundary: pages are
 first grouped into blocks by the deepest PDF bookmark (TOC entry) that starts on or before
 the page, then each block is cut into parent windows (1,500 tokens) and each parent into
@@ -60,7 +59,7 @@ where the child starts, and several children from the same parent collapse into 
 block. Each block's page range is recomputed from per-page offsets stored on the parent,
 so citations still point at the pages the LLM actually saw.
 
-Honest note: with 500-token children and an 8,000-char context budget (kept small for the
+Note: with 500-token children and an 8,000-char context budget (kept small for the
 Groq free tier), the parent window is only modestly larger than the child. The main
 practical win is de-duplication (two overlapping hits from the same section cost one
 block, not two). Smaller children (e.g. 200 tokens) would make the parent step matter more.
@@ -92,7 +91,7 @@ questions score < 0.01).
 token embeddings**, averaged over query tokens so the score stays in [-1, 1]. Document
 token matrices are cached on disk with the same content-hash cache.
 
-Limits, stated plainly: this is not ColBERT. bge-small was trained to produce a pooled
+Limits: this is not ColBERT. bge-small was trained to produce a pooled
 sentence vector, not token vectors meant for MaxSim, and there is no compression or
 PLAID index. A real ColBERT checkpoint (e.g. via PyLate) would be the proper version; it
 was left out to keep the dependency set and CPU footprint small. In the benchmark the
@@ -100,12 +99,12 @@ MaxSim reranker is better than no reranker on MRR but worse than the cross-encod
 
 ## Query expansion and rewriting
 
-* **Expansion (recall)**: an acronym glossary is mined from the corpus at ingest
+* Expansion (recall): an acronym glossary is mined from the corpus at ingest
   ("Secure Software Development Framework (SSDF)", "Generative AI (GAI)"). A query with
   `SSDF` gets a variant with the long form, and vice versa. Two-letter codes (AI, SP, ID)
   are skipped because they are ambiguous. Optional LLM paraphrases
   (`llm_expansion=True`) cost one LLM call per query and are off by default.
-* **Rewriting (ambiguous questions)**: `is_ambiguous` flags short questions, leading
+* Rewriting (ambiguous questions): `is_ambiguous` flags short questions, leading
   pronouns without a named entity, and vague references ("the framework") with no
   identifier. Only those are sent to the LLM for a rewrite. Early versions asked the LLM
   to resolve "it" to a document and it guessed the wrong one; the rewrite now drops
